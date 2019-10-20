@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rock, Paper, Scissors Game!</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!--Container-->
+<div class="container">
+    <h1>CSS Rock-Paper-Scissors</h1>
+
+     <form> 
+        <input type="radio" id="rock-rock" name="rock-paper-scissors">                      
+        <input type="radio" id="rock-paper" name="rock-paper-scissors">
+        <input type="radio" id="rock-scissors" name="rock-paper-scissors">
+        <input type="radio" id="paper-rock" name="rock-paper-scissors">
+        <input type="radio" id="paper-paper" name="rock-paper-scissors">
+        <input type="radio" id="paper-scissors" name="rock-paper-scissors">
+        <input type="radio" id="scissors-rock" name="rock-paper-scissors">
+        <input type="radio" id="scissors-paper" name="rock-paper-scissors">
+        <input type="radio" id="scissors-scissors" name="rock-paper-scissors">
+
+        <!--Game-->
+        <div class="game">          
+            <div class="hands" id="hands">
+                 <!--Draw hands-->
+                <div class="hand computer-hand" id="computer-hand">                 
+                  <div class="fist"></div>
+                  <div class="finger finger-1"></div>
+                  <div class="finger finger-2"></div>
+                  <div class="finger finger-3"></div>
+                  <div class="finger finger-4"></div>
+                  <div class="thumb"></div>
+                  <div class="arm"></div>
+                </div>
+                <div class="hand user-hand" id="user-hand">
+                  <div class="fist"></div>
+                  <div class="finger finger-1"></div>
+                  <div class="finger finger-2"></div>
+                  <div class="finger finger-3"></div>
+                  <div class="finger finger-4"></div>
+                  <div class="thumb"></div>
+                  <div class="arm"></div>
+                </div>
+                <!--Draw hands-->
+                <!--Icons-->
+                <div class="icons" id="icons">                 
+                  <div class="icon">
+                    <label for="rock-rock">✊</label>
+                    <label for="paper-rock">✊</label>
+                    <label for="scissors-rock">✊</label>
+                  </div>
+                  <div class="icon">
+                    <label for="rock-paper">🖐️</label>
+                    <label for="paper-paper">🖐️</label>
+                    <label for="scissors-paper">🖐️</label>
+                  </div>
+                  <div class="icon">
+                    <label for="rock-scissors">✌</label>
+                    <label for="paper-scissors">✌</label>
+                    <label for="scissors-scissors">✌</label>
+                  </div>
+                </div>
+                <!--Icons-->
+           </div>
+        </div>
+        <!--Game-->
+        <!--Message-->
+        <div id="message">
+          <h2></h2>
+          <input type="reset" value="Refresh Round!" />
+        </div>
+        <!--Message-->
+
+     </form>
+</div>
+<!--Container-->
+  
+</body>
+</html>
