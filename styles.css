@@ -1,47 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
 
-
 * {
     box-sizing: border-box;
     outline:none; 
 }
+
 html, body {
-    font-family:  Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    line-height: 1;   
-
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;  
 }
-.container {
-    margin:10px 30px; 
+
+body {
+  background-color: #fff;
+}
+
+.container { 
     width: 600px;
-    margin:0 auto; 
+    margin:50px auto; 
 }
-
-.container h1 {
-    text-align: center;
-    color: navy; 
-}
-∫
-.container form {
-    position: absolute;
-    top: 100px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-
-
-input[type="radio"] {
-    position: absolute;
-    top: -1000in;
-    left: -1000in;
-}
-
-
 .game {
+    margin:10px; 
+}
+.game h1 {
+    text-align: center;
+    color: navy;
+    font-weight:bold; 
+    font-size: 32px;
+    margin:10px; 
+}
+
+.game .game-canvas {
     background-color: lightsteelblue;
     border-radius: 10px;
 }
@@ -54,62 +44,50 @@ input[type="radio"] {
 }
 
 .game .hands .hand {
+    position: relative;
+    display: inline-block;
     margin: 20px;
     width: 200px;
     height: 200px;
-    position: relative;
-    transform: rotate(10deg);
-    display: inline-block;
-
 }
-
-
 .game .hands .hand > div {
     position: absolute;
     box-sizing: border-box;
     border: 2px solid grey;    
     transition: all 0.1s;
 }
-
 .game .hands .computer-hand > div {
     background: silver;
 }
 .game .hands .user-hand > div {
     background: gold;
 }
-
 .game .hands .hand  .fist {
+    width: 90px;
     height: 110px;
     left: 40px;
     top: 50px;
-    width: 90px;
     border-radius: 20px 0 0 20px;
 }
-  
 .game .hands .hand  .finger {
     width: 70px;
     height: 30px;
-    border-radius: 20px;
     left: 80px;
-    transform-origin: 0 50%;
-}
-  
-.game .hands .hand .finger-1 { top: 50px; --dif: 0px; }
-.game .hands .hand .finger-2 { top: 78px; left: 84px; --dif: 4px; }
-.game .hands .hand .finger-3 { top: 106px; --dif: 0px; }
-.game .hands .hand .finger-4 { top: 134px; height: 26px; left: 76px; --dif: -8px; }
-
+    border-radius: 20px;
+} 
+.game .hands .hand .finger-1 { top: 50px;}
+.game .hands .hand .finger-2 { top: 78px; left: 84px; }
+.game .hands .hand .finger-3 { top: 106px; }
+.game .hands .hand .finger-4 { top: 134px; height: 26px; left: 76px;}
 .game .hands .hand .thumb {
     width: 35px;
-    height: 70px;
-    
+    height: 70px;  
     border-radius: 0 20px 20px 20px;
     top: 50px;
     left: 80px;
     border-left: 0 solid;
     box-shadow: -17px 6px 0 -15px grey
 }
-
 .game .hands .hand .arm {
     width: 22px;
     height: 70px;
@@ -122,69 +100,39 @@ input[type="radio"] {
 }
 
 .game .hands .icons {
+    width:60px; 
     height: 200px;
     margin-left:20px; 
-    display: inline-flex;
+    display:flex;
     flex-direction: column;
 }
   
-.game .hands .icons > .icon {
-    flex: 1;
+.game .hands .icons > .icon {    
+    position: relative;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
+    flex:1; 
     width: 60px;
     height: 60px;
-    overflow: hidden;
-    position: relative;
 }
 
-.game .hands .icons .icon label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #f5f5f5;
-    border-radius:50%; 
-    cursor: pointer;
-    display: block;
-    height: 60px;
-    width: 60px;
-    line-height: 60px;
-    font-size: 2rem;   
-    user-select: none;
-  }
-
-.game .hands .icons .icon label:active {
-    position:static; 
-    margin-left: 60px;
-}
-  
-.game .hands .icons .icon label:active::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60px;
-    z-index: 10;
-    height: 60px;
-}
-  
-  
- 
-
-
-#message {
+.message {
   text-align: center;
   display: none;
 }
 
-#message h2 {
+.message h2 {
     background-color: peru;
     border-radius:10px; 
     padding:10px; 
+    margin:10px 0;
     color:white;
+    font-size:28px;
+    font-weight:bold; 
 }
 
-#message input {
+.message input {
     background-color: green;
     border-radius:10px;
     padding:10px; 
@@ -193,25 +141,36 @@ input[type="radio"] {
     cursor:pointer; 
 }
 
-input:checked ~ #message {
-  display: block;
+.source {
+  position:absolute;
+  right:10px;
+  bottom:10px;
+  font-size:12px; 
 }
 
 
 
+/**************************
+*******CSS ADVANCED********
+***************************/
 
-
-
-
-/*Animation*/
+/*ANIMATION*/
+/*Hand*/
 input:checked ~ .game .hand {
     animation: none !important;
 }
 
+.game .hands .hand  .finger {
+    transform-origin: 0 50%;
+}
+.game .hands .hand .finger-1 { --dif: 0px; }
+.game .hands .hand .finger-2 { --dif: 4px; }
+.game .hands .hand .finger-3 { --dif: 0px; }
+.game .hands .hand .finger-4 { --dif: -8px; }
+
 #computer-hand {
     animation: handShakeComputer 2s infinite;
 }
-
 #user-hand {
     transform: rotateY(180deg);
     animation: handShakeUser 2s infinite;
@@ -222,30 +181,65 @@ input:checked ~ .game .hand {
     0%,100% { transform: rotate(10deg); }
     50% { transform: rotate(-10deg); }
 }
-
-
 @keyframes handShakeUser {
     0%,100% { transform: rotateY(180deg) rotate(10deg); }
     50% { transform: rotateY(180deg) rotate(-10deg); }
 }
+/*Hand*/
 
-label {
+/*Label*/
+.game-canvas .hands .icons .icon label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 60px;
+    display: block;
+    font-size: 32px;   
+    line-height: 60px;    
+    background: #f5f5f5;
+    border-radius:50%; 
+    cursor: pointer;   
+    user-select: none;
+}
+.game-canvas .hands .icons .icon label:active {
+    position:static; 
+    margin-left: 60px;
+}  
+.game-canvas .hands .icons .icon label:active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    z-index: 10;
+    height: 60px;
+}
+/*Label*/
+/*ANIMATION*/
+
+
+/*LOGICS*/
+/*Label*/
+.game-canvas .hands .icons .icon label {
     animation: changeOrder 0.45s infinite linear;
 }
-
-label:nth-of-type(1) { animation-delay: -0.00s; }
-label:nth-of-type(2) { animation-delay: -0.15s; }
-label:nth-of-type(3) { animation-delay: -0.30s; }
-
+.game-canvas .hands .icons .icon label label:nth-of-type(1) { animation-delay: -0.00s; }
+.game-canvas .hands .icons .icon label label:nth-of-type(2) { animation-delay: -0.15s; }
+.game-canvas .hands .icons .icon label label:nth-of-type(3) { animation-delay: -0.30s; }
 
 @keyframes changeOrder {
     from { z-index: 9;}
     to { z-index: 1; }
 }
-/*Animation*/
+/*Label*/
+/*Inputs*/
+input[type="radio"] {
+    position: absolute;
+    top: -1000in;
+    left: -1000in;
+}
 
-
-/*Logics*/
 input[id$="scissors"]:checked ~ div #user-hand .finger-1,
 input[id^="scissors"]:checked ~ div #computer-hand .finger-1 {
   width: 130px;
@@ -272,21 +266,26 @@ input[id^="paper"]:checked ~ div #computer-hand .finger-4 {
   border-left: 0;
   border-radius: 0 20px 20px 0;
 }
-
-#rock-rock:checked ~ div h2::before,
-#paper-paper:checked ~ div h2::before,
+/*Inputs*/
+/*Message*/
+input:checked ~ #message {
+  display: block;
+}
+#rock-rock:checked ~ #message h2::before,
+#paper-paper:checked ~ #message h2::before,
 #scissors-scissors:checked ~ div h2::before {
   content: "You Tied!"
 }
-#rock-paper:checked ~ div h2::before,
-#paper-scissors:checked ~ div h2::before,
-#scissors-rock:checked ~ div h2::before {
+#rock-paper:checked ~ #message h2::before,
+#paper-scissors:checked ~ #message h2::before,
+#scissors-rock:checked ~ #message h2::before {
   content: "You Win!"
 }
-#rock-scissors:checked ~ div h2::before,
-#paper-rock:checked ~ div h2::before,
-#scissors-paper:checked ~ div h2::before {
+#rock-scissors:checked ~ #message h2::before,
+#paper-rock:checked ~ #message h2::before,
+#scissors-paper:checked ~ #message h2::before {
   content: "Computer Wins!"
 }
+/*Message*/
+/*LOGICS*/
 
-/*Logics*/

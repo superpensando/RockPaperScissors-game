@@ -8,8 +8,9 @@
 
 <!--Container-->
 <div class="container">
-    <h1>CSS Rock-Paper-Scissors</h1>
-
+  <!--Game-->
+  <div class="game">
+    <h1>Rock, Paper, Scissors Game!</h1>
      <form> 
         <input type="radio" id="rock-rock" name="rock-paper-scissors">                      
         <input type="radio" id="rock-paper" name="rock-paper-scissors">
@@ -21,8 +22,8 @@
         <input type="radio" id="scissors-paper" name="rock-paper-scissors">
         <input type="radio" id="scissors-scissors" name="rock-paper-scissors">
 
-        <!--Game-->
-        <div class="game">          
+        <!--Game Canvas -->
+        <div class="game-canvas">          
             <div class="hands" id="hands">
                  <!--Draw hands-->
                 <div class="hand computer-hand" id="computer-hand">                 
@@ -44,7 +45,7 @@
                   <div class="arm"></div>
                 </div>
                 <!--Draw hands-->
-                <!--Icons-->
+                <!--Draw Icons-->
                 <div class="icons" id="icons">                 
                   <div class="icon">
                     <label for="rock-rock">✊</label>
@@ -62,18 +63,23 @@
                     <label for="scissors-scissors">✌</label>
                   </div>
                 </div>
-                <!--Icons-->
-           </div>
+                <!--Draw Icons-->
+           </div>    
         </div>
-        <!--Game-->
+        <!--Game Canvas -->
         <!--Message-->
-        <div id="message">
+        <div class="message" id="message">
           <h2></h2>
           <input type="reset" value="Refresh Round!" />
         </div>
         <!--Message-->
 
      </form>
+     <p class="source">
+       Forked from: <a href="https://codepen.io/alvaromontoro/pen/BaaBYyz" target="_blank" title="CSS Rock-Paper-Scissors">CSS Rock-Paper-Scissors</a>
+     </p>
+   </div>
+  <!--Game-->
 </div>
 <!--Container-->
   
