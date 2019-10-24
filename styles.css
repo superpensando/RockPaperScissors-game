@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+
 
 * {
     box-sizing: border-box;
@@ -224,14 +224,17 @@ input:checked ~ .game .hand {
 .game-canvas .hands .icons .icon label {
     animation: changeOrder 0.45s infinite linear;
 }
-.game-canvas .hands .icons .icon label label:nth-of-type(1) { animation-delay: -0.00s; }
-.game-canvas .hands .icons .icon label label:nth-of-type(2) { animation-delay: -0.15s; }
-.game-canvas .hands .icons .icon label label:nth-of-type(3) { animation-delay: -0.30s; }
 
 @keyframes changeOrder {
     from { z-index: 9;}
     to { z-index: 1; }
 }
+
+.game-canvas .hands .icons .icon label:nth-of-type(1) { animation-delay: -0.00s; }
+.game-canvas .hands .icons .icon label:nth-of-type(2) { animation-delay: -0.15s; }
+.game-canvas .hands .icons .icon label:nth-of-type(3) { animation-delay: -0.30s; }
+
+
 /*Label*/
 /*Inputs*/
 input[type="radio"] {
